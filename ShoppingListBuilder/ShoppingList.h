@@ -46,27 +46,23 @@ public:
             return;
         }
 
-        cout << "Current Shopping List:\n";
-        for (size_t i = 0; i < items.size(); ++i) {
-            cout << i + 1 << ": " << items[i].getName();
-        }
+        displayItemNamesWithTag("Current Shopping List:");
 
         cout << "\nSelect the number of the item to remove (0 to cancel): ";
         int selection;
         while (!(cin >> selection) || selection < 0 || selection > (items.size())) {
-            cout << "Invalid input. Please enter a valid number or 0 to cancel: ";
+            system("cls");
+            displayItemNamesWithTag("Select the number of the item to remove (0 to cancel):");
+            cout << "\nInvalid input. Please enter a valid number or 0 to cancel: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         if (selection != 0) {
-            // Remove the selected item
-            cout << "Removed: " << items[selection - 1].getName();
+            system("cls");
             items.erase(items.begin() + selection - 1);
-        }
-        else {
-            cout << "Operation canceled.\n";
-        }
+        } 
+        else system("cls");
     }
 
     // Edit an item in the list by index
@@ -78,25 +74,19 @@ public:
             return;
         }
 
-        cout << "List of Items:\n";
-        for (size_t i = 0; i < items.size(); ++i) {
-            cout << i + 1 << ": ";
-            items[i].displayItem();
-        }
+        displayItemsWithTag("List of Items:");
 
         cout << "\nSelect the number of the item to edit (0 to cancel): ";
         int selection;
         while (!(cin >> selection) || selection < 0 || selection > items.size()) {
-            cout << "Invalid input. Please enter a valid number or 0 to cancel: ";
+            system("cls");
+            displayItemsWithTag("Select the number of the item to edit (0 to cancel)");
+            cout << "\nInvalid input. Please enter a valid number or 0 to cancel: ";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
         if (selection != 0) {
-            // Edit the selected item
-            cout << "Editing item: ";
-            items[selection - 1].getName();
-
             string newName;
             double newPrice;
             int newQuantity;
@@ -124,10 +114,7 @@ public:
             items[selection - 1].setPrice(newPrice);
             items[selection - 1].setQuantity(newQuantity);
 
-            cout << "Item edited successfully!\n";
-        }
-        else {
-            cout << "Operation canceled.\n";
+            system("cls");
         }
     }
 
@@ -159,5 +146,20 @@ public:
                 break; // Exit the loop when Escape is pressed
             }
         } while (true);
+    }
+
+    void displayItemNamesWithTag(string tag) {
+        cout << tag << '\n';
+        for (size_t i = 0; i < items.size(); ++i) {
+            cout << i + 1 << ": " << items[i].getName() << '\n';
+        }
+    }
+
+    void displayItemsWithTag(string tag) {
+        cout << tag << '\n';
+        for (size_t i = 0; i < items.size(); ++i) {
+            cout << i + 1 << ": ";
+            items[i].displayItem();
+        }
     }
 };

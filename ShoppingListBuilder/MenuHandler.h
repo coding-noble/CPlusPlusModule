@@ -11,7 +11,6 @@ public:
         return displayMenu({ "View List", "Add Item", "Remove Item", "Edit Item", "End Program" });
     }
 
-
 private:
     static int selectedOption;
 
