@@ -6,8 +6,6 @@ Description of my Basic Inventory System: This system simulates a practical appl
 
 In summary, this comprehensive C++ project serves as a testament to my dedication to improving my programing skills. It demonstrates my progression from foundational concepts to the practical implementation of a complex system, reflecting my commitment to continuous learning and growth as a software engineer.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
 [Shopping List Demo Video](https://youtu.be/KQq1xw2MThM)
 
 # Development Environment
