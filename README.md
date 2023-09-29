@@ -8,23 +8,14 @@ In summary, this comprehensive C++ project serves as a testament to my dedicatio
 
 {Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
 
-[Shopping List Demo Video](http://youtube.link.goes.here)
+[Shopping List Demo Video](https://youtu.be/KQq1xw2MThM)
 
 # Development Environment
 
 IDE: Visual Studios
 
 Language: C++
-Libraries:
-	iostream
-	vector
-	list
-	set
-	map
-	queue
-	conio.h
-	iomanip
-	cmath
+Libraries: iostream, vector, list, set, map, queue, conio.h, iomanip, and cmath
 
 # Useful Websites
 

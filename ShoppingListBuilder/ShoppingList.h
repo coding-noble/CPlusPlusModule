@@ -9,6 +9,21 @@ class ShoppingList {
 private:
     vector<ListItem> items;
 
+    void displayItemNamesWithTag(string tag) {
+        cout << tag << '\n';
+        for (size_t i = 0; i < items.size(); ++i) {
+            cout << i + 1 << ": " << items[i].getName() << '\n';
+        }
+    }
+
+    void displayItemsWithTag(string tag) {
+        cout << tag << '\n';
+        for (size_t i = 0; i < items.size(); ++i) {
+            cout << i + 1 << ": ";
+            items[i].displayItem();
+        }
+    }
+
 public:
     // Add an item to the list
     void addItem() {
@@ -62,7 +77,10 @@ public:
             system("cls");
             items.erase(items.begin() + selection - 1);
         } 
-        else system("cls");
+        else 
+        {
+            system("cls");
+        }
     }
 
     // Edit an item in the list by index
@@ -146,20 +164,5 @@ public:
                 break; // Exit the loop when Escape is pressed
             }
         } while (true);
-    }
-
-    void displayItemNamesWithTag(string tag) {
-        cout << tag << '\n';
-        for (size_t i = 0; i < items.size(); ++i) {
-            cout << i + 1 << ": " << items[i].getName() << '\n';
-        }
-    }
-
-    void displayItemsWithTag(string tag) {
-        cout << tag << '\n';
-        for (size_t i = 0; i < items.size(); ++i) {
-            cout << i + 1 << ": ";
-            items[i].displayItem();
-        }
     }
 };
